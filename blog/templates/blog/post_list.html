@@ -161,7 +161,8 @@
             {% for post in posts %}
             <div class="blog-post">
                 <h2 class="blog-post-title">{{ post.title }}</h2>
-                <p class="blog-post-meta">{{ post.published_date }} by <a
+                <p class="blog-post-meta">{% if post.published_date %}{{ post.published_date }}
+                    by {% endif %}<a
                         href="#">{{ post.author }}</a></p>
                 <p>{{ post.text|truncatewords:50 }}</p>
                 <a class="btn btn-outline-primary" href="#">Continue reading</a>
